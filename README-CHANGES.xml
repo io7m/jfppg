@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:changelog xmlns:c="http://www.io7m.com/schemas/changelog/1.0.0">
+  <c:project>io7m-jfppg</c:project>
+
+  <c:release ticket-system="com.io7m.fossil.jfppg">
+    <c:date>2012-03-15</c:date>
+    <c:version>1.0.0</c:version>
+    <c:item>
+      <c:date>2012-03-15</c:date>
+      <c:type-code-fix/>
+      <c:summary>Use consistent names in documentation.</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:release ticket-system="com.io7m.fossil.jfppg">
+    <c:date>2012-02-06</c:date>
+    <c:version>0.4.0</c:version>
+    <c:item>
+      <c:date>2012-02-08</c:date>
+      <c:type-platform-new/>
+      <c:summary>Add SunOS supported. Reduce ocaml version dependency.</c:summary>
+    </c:item>
+    <c:item>
+      <c:date>2012-02-08</c:date>
+      <c:type-code-fix/>
+      <c:summary>Change pattern match to work with older ocaml (3.10.2)</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:ticket-system xml:id="com.io7m.fossil.jfppg">
+    <c:ticket-url>http://fossil.io7m.com/repo.cgi/io7m-jfppg/tktview?name=</c:ticket-url>
+  </c:ticket-system>
+</c:changelog>

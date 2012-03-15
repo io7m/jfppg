@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright © 2012 http://io7m.com
+
+  Permission to use, copy, modify, and/or distribute this software for any
+  purpose with or without fee is hereby granted, provided that the above
+  copyright notice and this permission notice appear in all copies.
+
+  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  -->
+
+<s:document
+  xmlns:s="http://www.io7m.com/schemas/structural/0.1.0"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <s:document-title>io7m-jfppg 1.0.0 Documentation</s:document-title>
+  <s:document-style>documentation.css</s:document-style>
+  <s:document-contents/>
+
+  <s:part>
+    <s:part-title>Package Information</s:part-title>
+    <s:part-contents />
+    <s:section>
+      <s:section-title>Orientation</s:section-title>
+      <s:subsection>
+        <s:subsection-title>Overview</s:subsection-title>
+        <s:paragraph>
+          The <s:term type="package">jfppg</s:term>
+          package provides an OCaml program that generates Java code to
+          serialize/deserialize double precision floats to and from custom
+          fixed-point formats.
+        </s:paragraph>
+        <s:paragraph>
+          The program essentially takes a "signed" or "unsigned" declaration,
+          and a pair of numbers denoting the number of bits to use for the
+          integral and fractional parts of the fixed-point value. The program
+          then generates a Java class declaration with functions for serializing
+          and deserializing values of this type. The generated class contains
+          various informative constants and contains complete Javadoc
+          commenting. The generated class does not depend on the
+          <s:term type="package">jfppg</s:term>
+          package and therefore may be easily distributed without adding extra
+          dependencies to your program.
+        </s:paragraph>
+      </s:subsection>
+    </s:section>
+    <s:section>
+      <s:section-title>Installation</s:section-title>
+      <s:subsection>
+        <s:subsection-title>Installation Requirements</s:subsection-title>
+        <s:paragraph>
+          The package requires
+          <s:link-external target="http://caml.inria.fr">ocaml 3.10.2</s:link-external>
+          or newer to compile. The package uses some trivial build scripts
+          that will only run on POSIX-like systems. It is sufficient to use
+          <s:link-external target="http://www.mingw.org/wiki/MSYS">MSYS</s:link-external>
+          or <s:link-external target="http://www.cygwin.org">Cygwin</s:link-external>
+          on Windows.
+        </s:paragraph>
+        <s:paragraph>
+          The project can then be compiled using
+          <s:term type="command">make</s:term>:
+        </s:paragraph>
+        <s:paragraph>
+          <s:verbatim type="example"><![CDATA[$ make]]></s:verbatim>     
+        </s:paragraph>
+      </s:subsection>
+      <s:subsection>
+        <s:subsection-title>Installation</s:subsection-title>
+        <s:paragraph>
+          Copy the <s:term type="file">fppg</s:term> command to wherever
+          your platform usually keeps executables.
+        </s:paragraph>
+      </s:subsection>
+    </s:section>
+    <s:section>
+      <s:section-title>Supported Systems</s:section-title>
+      <s:paragraph>
+        The software produces code that is known to pass 100% of the
+        generated unit tests on the following platforms:
+      </s:paragraph>
+        <s:formal-item kind="platform_table" type="platforms">
+          <s:formal-item-title>Supported systems</s:formal-item-title>
+          <s:table>
+            <s:table-summary>Supported systems</s:table-summary>
+            <s:table-head>
+              <s:table-column-name>OS</s:table-column-name>
+              <s:table-column-name>OS-Version</s:table-column-name>
+              <s:table-column-name>OS-Arch</s:table-column-name>
+              <s:table-column-name>JDK-Vendor</s:table-column-name>
+              <s:table-column-name>JDK-Version</s:table-column-name>
+              <s:table-column-name>VM</s:table-column-name>
+              <s:table-column-name>VM-Version</s:table-column-name>
+            </s:table-head>
+            <s:table-body>
+              <s:table-row>
+                <s:table-cell>Linux</s:table-cell>
+                <s:table-cell>3.2.2-1-ARCH</s:table-cell>
+                <s:table-cell>x86_64</s:table-cell>
+                <s:table-cell>Sun Microsystems Inc.</s:table-cell>
+                <s:table-cell>1.6.0_22</s:table-cell>
+                <s:table-cell>OpenJDK 64-Bit Server VM</s:table-cell>
+                <s:table-cell>19.0-b09</s:table-cell>
+              </s:table-row>
+              <s:table-row>
+                <s:table-cell>Linux</s:table-cell>
+                <s:table-cell>3.2.9-1-ARCH</s:table-cell>
+                <s:table-cell>x86_64</s:table-cell>
+                <s:table-cell>Sun Microsystems Inc.</s:table-cell>
+                <s:table-cell>1.6.0_24</s:table-cell>
+                <s:table-cell>OpenJDK 64-Bit Server VM</s:table-cell>
+                <s:table-cell>20.0-b12</s:table-cell>
+              </s:table-row>
+              <s:table-row>
+                <s:table-cell>Windows XP</s:table-cell>
+                <s:table-cell>5.1</s:table-cell>
+                <s:table-cell>x86</s:table-cell>
+                <s:table-cell>Oracle Corporation</s:table-cell>
+                <s:table-cell>1.7.0_02</s:table-cell>
+                <s:table-cell>Java Hotspot(TM) Client VM</s:table-cell>
+                <s:table-cell>22.0-b10</s:table-cell>
+              </s:table-row>
+              <s:table-row>
+                <s:table-cell>Mac OS X</s:table-cell>
+                <s:table-cell>10.6.8</s:table-cell>
+                <s:table-cell>x86_64</s:table-cell>
+                <s:table-cell>Apple Inc.</s:table-cell>
+                <s:table-cell>1.6.0_29</s:table-cell>
+                <s:table-cell>Java Hotspot(TM) 64-Bit Server VM</s:table-cell>
+                <s:table-cell>20.4-b02-402</s:table-cell>
+              </s:table-row>
+              <s:table-row>
+                <s:table-cell>SunOS</s:table-cell>
+                <s:table-cell>5.11</s:table-cell>
+                <s:table-cell>x86</s:table-cell>
+                <s:table-cell>Sun Microsystems Inc.</s:table-cell>
+                <s:table-cell>1.6.0_21</s:table-cell>
+                <s:table-cell>Java Hotspot(TM) Client VM</s:table-cell>
+                <s:table-cell>17.0-b16</s:table-cell>
+              </s:table-row>
+            </s:table-body>
+          </s:table>
+        </s:formal-item>
+    </s:section>
+    <s:section>
+      <s:section-title>Platform Specific Issues</s:section-title>
+      <s:paragraph>
+        There are currently no known platform-specific issues.
+      </s:paragraph>
+    </s:section>
+    <s:section>
+      <s:section-title>License</s:section-title>
+      <s:paragraph>
+        All files distributed with the <s:term type="package">jfppg</s:term>
+        package are placed under the following license:
+        <s:verbatim type="license"><![CDATA[Copyright © 2012 http://io7m.com
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.]]>
+        </s:verbatim>
+      </s:paragraph>
+    </s:section>
+  </s:part>
+
+  <s:part>
+    <s:part-title>Tutorial</s:part-title>
+    <s:part-contents/>
+    <s:section>
+      <s:section-title>Tutorial</s:section-title>
+      <s:paragraph>
+        The <s:term type="command">fppg</s:term> command takes a class name,
+        a signed or unsigned declaration, a size in bits for the integral
+        part, and a size in bits for the fractional part:
+      </s:paragraph>
+      <s:formal-item kind="example">
+        <s:formal-item-title>Generation</s:formal-item-title>
+        <s:verbatim><![CDATA[$ fppg FixedI8F24Unsigned unsigned 8 24 > FixedI8F24Unsigned.java]]>
+        </s:verbatim>
+      </s:formal-item>
+      <s:paragraph>
+        The API presented by classes generated by <s:term type="file">fppg</s:term>
+        is trivial. Assuming that an unsigned fixed point type with
+        <s:term type="constant">8</s:term> bits for the integral part and
+        <s:term type="constant">24</s:term> bits for the fractional part:
+      </s:paragraph>
+      <s:formal-item kind="example">
+        <s:formal-item-title>Creation</s:formal-item-title>
+        <s:verbatim><![CDATA[final FixedI8F24Unsigned u = new FixedI8F24Unsigned(1.0);]]>
+        </s:verbatim>
+      </s:formal-item>
+      <s:paragraph>
+        The serialized value in <s:term type="variable">u</s:term> is
+        accessible from the field <s:term type="variable">u.value</s:term>.
+        This value can be decoded back to a double precision value using
+        the <s:term type="function">toDouble</s:term> function:
+      </s:paragraph>
+      <s:formal-item kind="example">
+        <s:formal-item-title>Creation</s:formal-item-title>
+        <s:verbatim><![CDATA[final double d = FixedI8F24Unsigned.toDouble(u.value);]]>
+        </s:verbatim>
+      </s:formal-item>
+    </s:section>
+  </s:part>
+
+</s:document>
