@@ -64,11 +64,18 @@
           on Windows.
         </s:paragraph>
         <s:paragraph>
-          The project can then be compiled using
+          On POSIX platforms, the project can then be compiled using
           <s:term type="command">make</s:term>:
         </s:paragraph>
         <s:paragraph>
           <s:verbatim type="example"><![CDATA[$ make]]></s:verbatim>     
+        </s:paragraph>
+        <s:paragraph>
+          On Windows platforms, the project can then be compiled using
+          <s:term type="command">make win32</s:term>:
+        </s:paragraph>
+        <s:paragraph>
+          <s:verbatim type="example"><![CDATA[$ make win32]]></s:verbatim>
         </s:paragraph>
       </s:subsection>
       <s:subsection>
@@ -150,9 +157,20 @@
     </s:section>
     <s:section>
       <s:section-title>Platform Specific Issues</s:section-title>
-      <s:paragraph>
-        There are currently no known platform-specific issues.
-      </s:paragraph>
+      <s:subsection>
+        <s:subsection-title>Win32</s:subsection-title>
+        <s:paragraph>
+          OCaml appears to have problems finding the correct libraries
+          for linking (often raising linker errors such as
+          "cannot find library ws2_32"). It is necessary to pass extra
+          linker flags on the command line to deal with this (for MinGW):
+          <s:verbatim type="license"><![CDATA[ocamlopt -cclib '-L c:\mingw\lib' ...]]></s:verbatim>
+        </s:paragraph>
+        <s:paragraph>
+          Note that <s:term type="command">make win32</s:term> already takes
+          care of this.
+        </s:paragraph>
+      </s:subsection>
     </s:section>
     <s:section>
       <s:section-title>License</s:section-title>
