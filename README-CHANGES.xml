@@ -3,6 +3,16 @@
   <c:project>io7m-jfppg</c:project>
 
   <c:release ticket-system="com.io7m.fossil.jfppg">
+    <c:date>2012-03-19</c:date>
+    <c:version>1.0.1</c:version>
+    <c:item>
+      <c:date>2012-03-19</c:date>
+      <c:type-code-new/>
+      <c:summary>Add 'make posix' and 'make win32' scripts. Default to POSIX.</c:summary>
+    </c:item>
+  </c:release>
+
+  <c:release ticket-system="com.io7m.fossil.jfppg">
     <c:date>2012-03-15</c:date>
     <c:version>1.0.0</c:version>
     <c:item>
