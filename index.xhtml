@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>io7m-jfppg 1.0.1 Documentation</title><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-layout.css"/><link rel="stylesheet" type="text/css" href="jstructural-2.0.0-colour.css"/><link rel="stylesheet" type="text/css" href="documentation.css"/></head><body><div class="st200_body"><div class="st200_document_title">io7m-jfppg 1.0.1 Documentation</div><ul class="st200_contents st200_document_contents"><li class="st200_contents_item st200_contents_item1 st200_contents_item_part"><a href="#st200_p1">1. Package Information</a><ul class="st200_contents st200_part_contents"><li class="st200_contents_item st200_contents_item2 st200_contents_item_section"><a href="#st200_p1s1">1.1. Orientation</a></li><li class="st200_contents_item st200_contents_item2 st200_contents_item_section"><a href="#st200_p1s2">1.2. Installation</a></li><li class="st200_contents_item st200_contents_item2 st200_contents_item_section"><a href="#st200_p1s3">1.3. Supported Systems</a></li><li class="st200_contents_item st200_contents_item2 st200_contents_item_section"><a href="#st200_p1s4">1.4. Platform Specific Issues</a></li><li class="st200_contents_item st200_contents_item2 st200_contents_item_section"><a href="#st200_p1s5">1.5. License</a></li></ul></li><li class="st200_contents_item st200_contents_item1 st200_contents_item_part"><a href="#st200_p2">2. Tutorial</a><ul class="st200_contents st200_part_contents"><li class="st200_contents_item st200_contents_item2 st200_contents_item_section"><a href="#st200_p2s1">2.1. Tutorial</a></li></ul></li></ul><div class="st200_part_container"><div class="st200_part_title_number"><a id="st200_p1" href="#st200_p1">1</a></div><div class="st200_part_title">Package Information</div><ul class="st200_contents st200_part_contents_outer st200_part_contents"><li class="st200_contents_item st200_contents_item1 st200_contents_item_section"><a href="#st200_p1s1">1.1. Orientation</a><ul class="st200_contents st200_section_contents"><li class="st200_contents_item st200_contents_item2 st200_contents_item_subsection"><a href="#st200_p1s1ss1">1.1.1. Overview</a></li></ul></li><li class="st200_contents_item st200_contents_item1 st200_contents_item_section"><a href="#st200_p1s2">1.2. Installation</a><ul class="st200_contents st200_section_contents"><li class="st200_contents_item st200_contents_item2 st200_contents_item_subsection"><a href="#st200_p1s2ss1">1.2.1. Installation Requirements</a></li><li class="st200_contents_item st200_contents_item2 st200_contents_item_subsection"><a href="#st200_p1s2ss2">1.2.2. Installation</a></li></ul></li><li class="st200_contents_item st200_contents_item1 st200_contents_item_section"><a href="#st200_p1s3">1.3. Supported Systems</a></li><li class="st200_contents_item st200_contents_item1 st200_contents_item_section"><a href="#st200_p1s4">1.4. Platform Specific Issues</a><ul class="st200_contents st200_section_contents"><li class="st200_contents_item st200_contents_item2 st200_contents_item_subsection"><a href="#st200_p1s4ss1">1.4.1. Win32</a></li></ul></li><li class="st200_contents_item st200_contents_item1 st200_contents_item_section"><a href="#st200_p1s5">1.5. License</a></li></ul><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p1s1" href="#st200_p1s1">1.1</a></div><div class="st200_section_title">Orientation</div><div class="st200_subsection_container"><div class="st200_subsection_title_number"><a id="st200_p1s1ss1" href="#st200_p1s1ss1">1.1.1</a></div><div class="st200_subsection_title">Overview</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s1ss1pg1" href="#st200_p1s1ss1pg1">1</a></div><div class="st200_paragraph">
+          The <span class="st200_term package">jfppg</span>
+          package provides an OCaml program that generates Java code to
+          serialize/deserialize double precision floats to and from custom
+          fixed-point formats.
+        </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s1ss1pg2" href="#st200_p1s1ss1pg2">2</a></div><div class="st200_paragraph">
+          The program essentially takes a "signed" or "unsigned" declaration,
+          and a pair of numbers denoting the number of bits to use for the
+          integral and fractional parts of the fixed-point value. The program
+          then generates a Java class declaration with functions for serializing
+          and deserializing values of this type. The generated class contains
+          various informative constants and contains complete Javadoc
+          commenting. The generated class does not depend on the
+          <span class="st200_term package">jfppg</span>
+          package and therefore may be easily distributed without adding extra
+          dependencies to your program.
+        </div></div></div></div><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p1s2" href="#st200_p1s2">1.2</a></div><div class="st200_section_title">Installation</div><div class="st200_subsection_container"><div class="st200_subsection_title_number"><a id="st200_p1s2ss1" href="#st200_p1s2ss1">1.2.1</a></div><div class="st200_subsection_title">Installation Requirements</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s2ss1pg1" href="#st200_p1s2ss1pg1">1</a></div><div class="st200_paragraph">
+          The package requires
+          <a class="st200_link_external" href="http://caml.inria.fr">ocaml 3.10.2</a>
+          or newer to compile. The package uses some trivial build scripts
+          that will only run on POSIX-like systems. It is sufficient to use
+          <a class="st200_link_external" href="http://www.mingw.org/wiki/MSYS">MSYS</a>
+          or <a class="st200_link_external" href="http://www.cygwin.org">Cygwin</a>
+          on Windows.
+        </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s2ss1pg2" href="#st200_p1s2ss1pg2">2</a></div><div class="st200_paragraph">
+          On POSIX platforms, the project can then be compiled using
+          <span class="st200_term command">make</span>:
+        </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s2ss1pg3" href="#st200_p1s2ss1pg3">3</a></div><div class="st200_paragraph">
+          <pre class="st200_verbatim example">$ make</pre>     
+        </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s2ss1pg4" href="#st200_p1s2ss1pg4">4</a></div><div class="st200_paragraph">
+          On Windows platforms, the project can then be compiled using
+          <span class="st200_term command">make win32</span>:
+        </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s2ss1pg5" href="#st200_p1s2ss1pg5">5</a></div><div class="st200_paragraph">
+          <pre class="st200_verbatim example">$ make win32</pre>
+        </div></div></div><div class="st200_subsection_container"><div class="st200_subsection_title_number"><a id="st200_p1s2ss2" href="#st200_p1s2ss2">1.2.2</a></div><div class="st200_subsection_title">Installation</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s2ss2pg1" href="#st200_p1s2ss2pg1">1</a></div><div class="st200_paragraph">
+          Copy the <span class="st200_term file">fppg</span> command to wherever
+          your platform usually keeps executables.
+        </div></div></div></div><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p1s3" href="#st200_p1s3">1.3</a></div><div class="st200_section_title">Supported Systems</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s3pg1" href="#st200_p1s3pg1">1</a></div><div class="st200_paragraph">
+        The software produces code that is known to pass 100% of the
+        generated unit tests on the following platforms:
+      </div></div><div class="st200_formal_item platforms"><div class="st200_formal_item_title platforms"><a id="st200_p1s3fo1" href="#st200_p1s3fo1">1.3.1. Supported systems</a></div><table class="st200_table" summary="Supported systems"><thead class="st200_table_head"><tr><th class="st200_table_column_name">OS</th><th class="st200_table_column_name">OS-Version</th><th class="st200_table_column_name">OS-Arch</th><th class="st200_table_column_name">JDK-Vendor</th><th class="st200_table_column_name">JDK-Version</th><th class="st200_table_column_name">VM</th><th class="st200_table_column_name">VM-Version</th></tr></thead><tbody class="st200_table_body"><tr class="st200_table_row"><td class="st200_table_cell">Linux</td><td class="st200_table_cell">3.2.2-1-ARCH</td><td class="st200_table_cell">x86_64</td><td class="st200_table_cell">Sun Microsystems Inc.</td><td class="st200_table_cell">1.6.0_22</td><td class="st200_table_cell">OpenJDK 64-Bit Server VM</td><td class="st200_table_cell">19.0-b09</td></tr><tr class="st200_table_row"><td class="st200_table_cell">Linux</td><td class="st200_table_cell">3.2.9-1-ARCH</td><td class="st200_table_cell">x86_64</td><td class="st200_table_cell">Sun Microsystems Inc.</td><td class="st200_table_cell">1.6.0_24</td><td class="st200_table_cell">OpenJDK 64-Bit Server VM</td><td class="st200_table_cell">20.0-b12</td></tr><tr class="st200_table_row"><td class="st200_table_cell">Windows XP</td><td class="st200_table_cell">5.1</td><td class="st200_table_cell">x86</td><td class="st200_table_cell">Oracle Corporation</td><td class="st200_table_cell">1.7.0_02</td><td class="st200_table_cell">Java Hotspot(TM) Client VM</td><td class="st200_table_cell">22.0-b10</td></tr><tr class="st200_table_row"><td class="st200_table_cell">Mac OS X</td><td class="st200_table_cell">10.6.8</td><td class="st200_table_cell">x86_64</td><td class="st200_table_cell">Apple Inc.</td><td class="st200_table_cell">1.6.0_29</td><td class="st200_table_cell">Java Hotspot(TM) 64-Bit Server VM</td><td class="st200_table_cell">20.4-b02-402</td></tr><tr class="st200_table_row"><td class="st200_table_cell">SunOS</td><td class="st200_table_cell">5.11</td><td class="st200_table_cell">x86</td><td class="st200_table_cell">Sun Microsystems Inc.</td><td class="st200_table_cell">1.6.0_21</td><td class="st200_table_cell">Java Hotspot(TM) Client VM</td><td class="st200_table_cell">17.0-b16</td></tr></tbody></table></div></div><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p1s4" href="#st200_p1s4">1.4</a></div><div class="st200_section_title">Platform Specific Issues</div><div class="st200_subsection_container"><div class="st200_subsection_title_number"><a id="st200_p1s4ss1" href="#st200_p1s4ss1">1.4.1</a></div><div class="st200_subsection_title">Win32</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s4ss1pg1" href="#st200_p1s4ss1pg1">1</a></div><div class="st200_paragraph">
+          OCaml appears to have problems finding the correct libraries
+          for linking (often raising linker errors such as
+          "cannot find library ws2_32"). It is necessary to pass extra
+          linker flags on the command line to deal with this (for MinGW):
+          <pre class="st200_verbatim license">ocamlopt -cclib '-L c:\mingw\lib' ...</pre>
+        </div></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s4ss1pg2" href="#st200_p1s4ss1pg2">2</a></div><div class="st200_paragraph">
+          Note that <span class="st200_term command">make win32</span> already takes
+          care of this.
+        </div></div></div></div><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p1s5" href="#st200_p1s5">1.5</a></div><div class="st200_section_title">License</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p1s5pg1" href="#st200_p1s5pg1">1</a></div><div class="st200_paragraph">
+        All files distributed with the <span class="st200_term package">jfppg</span>
+        package are placed under the following license:
+        <pre class="st200_verbatim license">Copyright © 2012 http://io7m.com
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+        </pre>
+      </div></div></div></div><div class="st200_part_container"><div class="st200_part_title_number"><a id="st200_p2" href="#st200_p2">2</a></div><div class="st200_part_title">Tutorial</div><ul class="st200_contents st200_part_contents_outer st200_part_contents"><li class="st200_contents_item st200_contents_item1 st200_contents_item_section"><a href="#st200_p2s1">2.1. Tutorial</a></li></ul><div class="st200_section_container"><div class="st200_section_title_number"><a id="st200_p2s1" href="#st200_p2s1">2.1</a></div><div class="st200_section_title">Tutorial</div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s1pg1" href="#st200_p2s1pg1">1</a></div><div class="st200_paragraph">
+        The <span class="st200_term command">fppg</span> command takes a class name,
+        a signed or unsigned declaration, a size in bits for the integral
+        part, and a size in bits for the fractional part:
+      </div></div><div class="st200_formal_item"><div class="st200_formal_item_title"><a id="st200_p2s1fo1" href="#st200_p2s1fo1">2.1.1. Generation</a></div><pre class="st200_verbatim">$ fppg FixedI8F24Unsigned unsigned 8 24 &gt; FixedI8F24Unsigned.java
+        </pre></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s1pg2" href="#st200_p2s1pg2">2</a></div><div class="st200_paragraph">
+        The API presented by classes generated by <span class="st200_term file">fppg</span>
+        is trivial. Assuming that an unsigned fixed point type with
+        <span class="st200_term constant">8</span> bits for the integral part and
+        <span class="st200_term constant">24</span> bits for the fractional part:
+      </div></div><div class="st200_formal_item"><div class="st200_formal_item_title"><a id="st200_p2s1fo2" href="#st200_p2s1fo2">2.1.2. Creation</a></div><pre class="st200_verbatim">final FixedI8F24Unsigned u = new FixedI8F24Unsigned(1.0);
+        </pre></div><div class="st200_paragraph_container"><div class="st200_paragraph_number"><a id="st200_p2s1pg3" href="#st200_p2s1pg3">3</a></div><div class="st200_paragraph">
+        The serialized value in <span class="st200_term variable">u</span> is
+        accessible from the field <span class="st200_term variable">u.value</span>.
+        This value can be decoded back to a double precision value using
+        the <span class="st200_term function">toDouble</span> function:
+      </div></div><div class="st200_formal_item"><div class="st200_formal_item_title"><a id="st200_p2s1fo3" href="#st200_p2s1fo3">2.1.3. Creation</a></div><pre class="st200_verbatim">final double d = FixedI8F24Unsigned.toDouble(u.value);
+        </pre></div></div></div></div></body></html>
