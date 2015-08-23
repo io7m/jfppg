@@ -17,7 +17,7 @@
   -->
 
 <s:document
-  xmlns:s="http://www.io7m.com/schemas/structural/0.1.0"
+  xmlns:s="http://schemas.io7m.com/structural/2.1.0"
   xmlns:xi="http://www.w3.org/2001/XInclude">
   <s:document-title>io7m-jfppg 1.0.1 Documentation</s:document-title>
   <s:document-style>documentation.css</s:document-style>
@@ -31,7 +31,7 @@
       <s:subsection>
         <s:subsection-title>Overview</s:subsection-title>
         <s:paragraph>
-          The <s:term type="package">jfppg</s:term>
+          The <s:term s:type="package">jfppg</s:term>
           package provides an OCaml program that generates Java code to
           serialize/deserialize double precision floats to and from custom
           fixed-point formats.
@@ -44,7 +44,7 @@
           and deserializing values of this type. The generated class contains
           various informative constants and contains complete Javadoc
           commenting. The generated class does not depend on the
-          <s:term type="package">jfppg</s:term>
+          <s:term s:type="package">jfppg</s:term>
           package and therefore may be easily distributed without adding extra
           dependencies to your program.
         </s:paragraph>
@@ -56,32 +56,32 @@
         <s:subsection-title>Installation Requirements</s:subsection-title>
         <s:paragraph>
           The package requires
-          <s:link-external target="http://caml.inria.fr">ocaml 3.10.2</s:link-external>
+          <s:link-external s:target="http://caml.inria.fr">ocaml 3.10.2</s:link-external>
           or newer to compile. The package uses some trivial build scripts
           that will only run on POSIX-like systems. It is sufficient to use
-          <s:link-external target="http://www.mingw.org/wiki/MSYS">MSYS</s:link-external>
-          or <s:link-external target="http://www.cygwin.org">Cygwin</s:link-external>
+          <s:link-external s:target="http://www.mingw.org/wiki/MSYS">MSYS</s:link-external>
+          or <s:link-external s:target="http://www.cygwin.org">Cygwin</s:link-external>
           on Windows.
         </s:paragraph>
         <s:paragraph>
           On POSIX platforms, the project can then be compiled using
-          <s:term type="command">make</s:term>:
+          <s:term s:type="command">make</s:term>:
         </s:paragraph>
         <s:paragraph>
-          <s:verbatim type="example"><![CDATA[$ make]]></s:verbatim>     
+          <s:verbatim s:type="example"><![CDATA[$ make]]></s:verbatim>     
         </s:paragraph>
         <s:paragraph>
           On Windows platforms, the project can then be compiled using
-          <s:term type="command">make win32</s:term>:
+          <s:term s:type="command">make win32</s:term>:
         </s:paragraph>
         <s:paragraph>
-          <s:verbatim type="example"><![CDATA[$ make win32]]></s:verbatim>
+          <s:verbatim s:type="example"><![CDATA[$ make win32]]></s:verbatim>
         </s:paragraph>
       </s:subsection>
       <s:subsection>
         <s:subsection-title>Installation</s:subsection-title>
         <s:paragraph>
-          Copy the <s:term type="file">fppg</s:term> command to wherever
+          Copy the <s:term s:type="file">fppg</s:term> command to wherever
           your platform usually keeps executables.
         </s:paragraph>
       </s:subsection>
@@ -92,7 +92,7 @@
         The software produces code that is known to pass 100% of the
         generated unit tests on the following platforms:
       </s:paragraph>
-        <s:formal-item kind="platform_table" type="platforms">
+        <s:formal-item s:kind="platform_table" s:type="platforms">
           <s:formal-item-title>Supported systems</s:formal-item-title>
           <s:table>
             <s:table-summary>Supported systems</s:table-summary>
@@ -164,10 +164,10 @@
           for linking (often raising linker errors such as
           "cannot find library ws2_32"). It is necessary to pass extra
           linker flags on the command line to deal with this (for MinGW):
-          <s:verbatim type="license"><![CDATA[ocamlopt -cclib '-L c:\mingw\lib' ...]]></s:verbatim>
+          <s:verbatim s:type="license"><![CDATA[ocamlopt -cclib '-L c:\mingw\lib' ...]]></s:verbatim>
         </s:paragraph>
         <s:paragraph>
-          Note that <s:term type="command">make win32</s:term> already takes
+          Note that <s:term s:type="command">make win32</s:term> already takes
           care of this.
         </s:paragraph>
       </s:subsection>
@@ -175,9 +175,9 @@
     <s:section>
       <s:section-title>License</s:section-title>
       <s:paragraph>
-        All files distributed with the <s:term type="package">jfppg</s:term>
+        All files distributed with the <s:term s:type="package">jfppg</s:term>
         package are placed under the following license:
-        <s:verbatim type="license"><![CDATA[Copyright © 2012 http://io7m.com
+        <s:verbatim s:type="license"><![CDATA[Copyright © 2012 http://io7m.com
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -201,33 +201,33 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.]]>
     <s:section>
       <s:section-title>Tutorial</s:section-title>
       <s:paragraph>
-        The <s:term type="command">fppg</s:term> command takes a class name,
+        The <s:term s:type="command">fppg</s:term> command takes a class name,
         a signed or unsigned declaration, a size in bits for the integral
         part, and a size in bits for the fractional part:
       </s:paragraph>
-      <s:formal-item kind="example">
+      <s:formal-item s:kind="example">
         <s:formal-item-title>Generation</s:formal-item-title>
         <s:verbatim><![CDATA[$ fppg FixedI8F24Unsigned unsigned 8 24 > FixedI8F24Unsigned.java]]>
         </s:verbatim>
       </s:formal-item>
       <s:paragraph>
-        The API presented by classes generated by <s:term type="file">fppg</s:term>
+        The API presented by classes generated by <s:term s:type="file">fppg</s:term>
         is trivial. Assuming that an unsigned fixed point type with
-        <s:term type="constant">8</s:term> bits for the integral part and
-        <s:term type="constant">24</s:term> bits for the fractional part:
+        <s:term s:type="constant">8</s:term> bits for the integral part and
+        <s:term s:type="constant">24</s:term> bits for the fractional part:
       </s:paragraph>
-      <s:formal-item kind="example">
+      <s:formal-item s:kind="example">
         <s:formal-item-title>Creation</s:formal-item-title>
         <s:verbatim><![CDATA[final FixedI8F24Unsigned u = new FixedI8F24Unsigned(1.0);]]>
         </s:verbatim>
       </s:formal-item>
       <s:paragraph>
-        The serialized value in <s:term type="variable">u</s:term> is
-        accessible from the field <s:term type="variable">u.value</s:term>.
+        The serialized value in <s:term s:type="variable">u</s:term> is
+        accessible from the field <s:term s:type="variable">u.value</s:term>.
         This value can be decoded back to a double precision value using
-        the <s:term type="function">toDouble</s:term> function:
+        the <s:term s:type="function">toDouble</s:term> function:
       </s:paragraph>
-      <s:formal-item kind="example">
+      <s:formal-item s:kind="example">
         <s:formal-item-title>Creation</s:formal-item-title>
         <s:verbatim><![CDATA[final double d = FixedI8F24Unsigned.toDouble(u.value);]]>
         </s:verbatim>

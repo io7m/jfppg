@@ -1,1 +1,1 @@
-io7m-jfppg 1.0.1
+io7m-jfppg 1.0.2
